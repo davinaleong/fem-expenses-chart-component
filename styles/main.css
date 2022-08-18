@@ -24,8 +24,10 @@
   --clr-primary-400: hsl(28, 10%, 53%);
   --clr-primary-900: hsl(25, 47%, 15%);
 
+  --clr-red-300: hsl(10, 100%, 76%);
   --clr-red-400: hsl(10, 79%, 65%);
 
+  --clr-cyan-300: hsl(187, 49%, 80%);
   --clr-cyan-400: hsl(186, 34%, 60%);
 
   --clr-grey-100: hsl(0, 0%, 100%);
@@ -145,22 +147,25 @@ main {
   height: 100%;
 }
 
-.card-heading {
+.card-header > .card-heading {
   grid-column: 1;
   grid-row: 1;
 }
 
-.card-amount {
+.card-header > .card-amount {
   grid-column: 1;
   grid-row: 2;
   align-self: end;
 }
 
+.card-header > .card-decoration {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
 .card-decoration {
   --decoration-size: 2.5em;
 
-  grid-column: 2;
-  grid-row: 1 / span 2;
   display: flex;
   align-self: center;
   position: relative;
@@ -189,6 +194,95 @@ main {
 
 .card-body {
   overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, max-content);
+}
+
+.card-body > .card-heading {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.card-body > .card-chart {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+}
+
+.card-chart {
+  --column-size: 2em;
+
+  display: flex;
+  gap: var(--chart-spacer);
+  justify-content: space-between;
+  align-items: end;
+}
+
+.chart-column {
+  width: var(--column-size);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: var(--size-200);
+  padding-top: var(--size-700);
+  height: 15em;
+}
+
+.chart-bar {
+  position: relative;
+  width: 100%;
+  height: var(--height);
+  border-radius: var(--size-100);
+  background-color: var(--clr-red-400);
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.chart-bar:where(:hover, :active) {
+  background-color: var(--clr-red-300);
+}
+
+.chart-bar[data-today] {
+  background-color: var(--clr-cyan-400);
+}
+
+.chart-bar[data-today]:where(:hover, :active) {
+  background-color: var(--clr-cyan-300);
+}
+
+.chart-popup {
+  opacity: 0;
+  position: absolute;
+  top: -2.5em;
+  left: -50%;
+  color: var(--clr-primary-100);
+  border-radius: var(--size-100);
+  background-color: var(--clr-primary-900);
+  font-size: var(--fs-300);
+  padding: var(--size-100) var(--size-200);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.chart-bar:where(:hover, :active) .chart-popup {
+  opacity: 1;
+}
+
+.chart-label {
+  width: 100%;
+  color: var(--clr-primary-400);
+  text-transform: lowercase;
+  text-align: center;
+}
+
+.card-body > .card-divider {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+}
+
+.card-divider {
+  height: 1px;
+  background-color: var(--clr-primary-200);
+  margin-block: var(--size-400);
 }
 
 /** Content - End **/
@@ -220,10 +314,16 @@ main {
   color: var(--clr-primary-900);
 }
 
+.text-red-300 {
+  color: var(--clr-red-300);
+}
 .text-red-400 {
   color: var(--clr-red-400);
 }
 
+.text-cyan-300 {
+  color: var(--clr-cyan-300);
+}
 .text-cyan-400 {
   color: var(--clr-cyan-400);
 }
@@ -273,10 +373,16 @@ main {
   background-color: var(--clr-primary-900);
 }
 
+.bg-red-300 {
+  background-color: var(--clr-red-300);
+}
 .bg-red-400 {
   background-color: var(--clr-red-400);
 }
 
+.bg-cyan-300 {
+  background-color: var(--clr-cyan-300);
+}
 .bg-cyan-400 {
   background-color: var(--clr-cyan-400);
 }
