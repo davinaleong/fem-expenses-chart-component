@@ -87,7 +87,7 @@ body {
   font-family: var(--ff-body);
   font-weight: var(--fw-regular);
   display: grid;
-  grid-template-rows: auto max-content max-content;
+  grid-template-rows: auto max-content;
 }
 
 main {
@@ -130,8 +130,8 @@ main {
 .card {
   --card-width: 21.438em;
   --card-height: 33.438em;
-  --card-padding: var(--size-600);
-  --card-spacer: var(--size-400);
+  --card-padding: var(--size-400);
+  --card-spacer: var(--size-300);
 
   width: var(--card-width);
   min-height: var(--card-height);
@@ -145,6 +145,8 @@ main {
   .card {
     --card-width: 33.75em;
     --card-height: 41.25em;
+    --card-padding: var(--size-600);
+    --card-spacer: var(--size-400);
     grid-template-rows: 7.813em 32.063em;
   }
 }
@@ -207,9 +209,15 @@ main {
   overflow: hidden;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: max-content 20em repeat(4, max-content);
+  grid-template-rows: max-content 16.5em repeat(4, max-content);
   align-items: center;
   padding: var(--card-padding);
+}
+
+@media (min-width: 35.75em) {
+  .card-body {
+    grid-template-rows: max-content 20em repeat(4, max-content);
+  }
 }
 
 .card-body > .card-heading {
@@ -268,12 +276,13 @@ main {
   opacity: 0;
   position: absolute;
   top: -2.5em;
-  left: -50%;
+  left: 50%;
   color: var(--clr-primary-100);
   border-radius: var(--size-100);
   background-color: var(--clr-primary-900);
   font-size: var(--fs-300);
   padding: var(--size-100) var(--size-200);
+  transform: translateX(-50%);
   transition: opacity 0.3s ease-in-out;
 }
 
