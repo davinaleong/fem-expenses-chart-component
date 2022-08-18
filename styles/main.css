@@ -197,6 +197,7 @@ main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(6, max-content);
+  align-items: center;
 }
 
 .card-body > .card-heading {
@@ -283,6 +284,16 @@ main {
   height: 1px;
   background-color: var(--clr-primary-200);
   margin-block: var(--size-400);
+}
+
+.card-body > .card-total-heading {
+  grid-column: 1 / span 2;
+  grid-row: 4;
+}
+
+.card-body > .card-total {
+  grid-column: 1;
+  grid-row: 5 / span 6;
 }
 
 /** Content - End **/
@@ -1683,7 +1694,7 @@ main {
   line-height: 0;
 }
 .lh-200 {
-  line-height: 1.2em;
+  line-height: 0.8em;
 }
 
 /** Utility - Border Radius **/
