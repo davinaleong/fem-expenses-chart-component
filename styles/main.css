@@ -14,6 +14,7 @@
       - Utility - Text Transforms
       - Utility - Letter Spacings
       - Utility - Line Heights
+      - Utility - Border Radius
 */
 
 /** Root **/
@@ -38,8 +39,8 @@
   --clr-grey-900: hsl(0, 0%, 10%);
   --clr-grey-1000: hsl(0, 0%, 0%);
 
-  --ff-primary: "Lexend Deca", Verdana, sans-serif;
-  --ff-secondary: "Big Shoulders Display", Arial, sans-serif;
+  --ff-primary: "DM Sans", Verdana, sans-serif;
+  --ff-secondary: "DM Sans", Arial, sans-serif;
   --ff-body: var(--ff-primary);
   --ff-heading: var(--ff-secondary);
 
@@ -125,27 +126,23 @@ main {
 
 /** Content - Card **/
 .card {
-  --width: 20.625em;
-  --height: 28.125em;
+  --width: 21.438em;
+  --height: 33.438em;
 
   width: var(--width);
   min-height: var(--height);
-  border-radius: var(--size-200);
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 6.063em 26.438em;
+  gap: var(--size-400);
+}
+
+.card-header {
   overflow: hidden;
-  display: grid;
 }
 
-.card-header img {
-  width: 100%;
-  height: auto;
-}
-
-.card-content {
-  --padding: var(--size-400);
-  padding: var(--padding);
-  display: grid;
-  align-items: center;
-  justify-content: center;
+.card-body {
+  overflow: hidden;
 }
 
 /** Content - End **/
@@ -1456,11 +1453,9 @@ main {
 .text-left {
   text-align: left;
 }
-
 .text-center {
   text-align: center;
 }
-
 .text-right {
   text-align: right;
 }
@@ -1469,11 +1464,9 @@ main {
   .text-md-left {
     text-align: left;
   }
-
   .text-md-center {
     text-align: center;
   }
-
   .text-md-right {
     text-align: right;
   }
@@ -1483,7 +1476,6 @@ main {
 .display-mobile {
   display: block;
 }
-
 .display-desktop {
   display: none;
 }
@@ -1492,7 +1484,6 @@ main {
   .display-mobile {
     display: none;
   }
-
   .display-desktop {
     display: block;
   }
@@ -1502,11 +1493,9 @@ main {
 .tt-lowercase {
   text-transform: lowercase;
 }
-
 .tt-uppercase {
   text-transform: uppercase;
 }
-
 .tt-capitalize {
   text-transform: capitalize;
 }
@@ -1515,27 +1504,21 @@ main {
 .ls-normal {
   letter-spacing: normal;
 }
-
 .ls-100 {
   letter-spacing: 0;
 }
-
 .ls-200 {
   letter-spacing: 0.03em;
 }
-
 .ls-300 {
   letter-spacing: 0.05em;
 }
-
 .ls-400 {
   letter-spacing: 0.08em;
 }
-
 .ls-500 {
   letter-spacing: 0.1em;
 }
-
 .ls-600 {
   letter-spacing: 0.3em;
 }
@@ -1544,13 +1527,43 @@ main {
 .lh-normal {
   line-height: normal;
 }
-
 .lh-100 {
   line-height: 0;
 }
-
 .lh-200 {
   line-height: 1.2em;
+}
+
+/** Utility - Border Radius **/
+.br-100 {
+  border-radius: var(--size-100);
+}
+.br-200 {
+  border-radius: var(--size-200);
+}
+.br-300 {
+  border-radius: var(--size-300);
+}
+.br-400 {
+  border-radius: var(--size-400);
+}
+.br-500 {
+  border-radius: var(--size-500);
+}
+.br-600 {
+  border-radius: var(--size-600);
+}
+.br-700 {
+  border-radius: var(--size-700);
+}
+.br-900 {
+  border-radius: var(--size-900);
+}
+.br-1000 {
+  border-radius: var(--size-1000);
+}
+.br-1100 {
+  border-radius: var(--size-1100);
 }
 
 /** Utility - End **/

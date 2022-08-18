@@ -37,19 +37,22 @@
 
     <script type="module" src="./scripts/main.js"></script>
   </head>
-  <body>
+  <body class="bg-primary-200 text-primary-900">
     <main>
       <h1 class="visually-hidden">Expenses Chart Component</h1>
 
       <div class="card">
-        <div class="card-header">
-          <h2 class="card-heading">My balance</h2>
-          <p class="card-amount" data-balance></p>
-          <div class="card-decoration"></div>
+        <div class="card-header | p-400 bg-red-400 br-300">
+          <h2 class="card-heading | text-primary-200 fs-200">My balance</h2>
+          <p class="card-amount | text-grey-100 fs-600" data-balance>$921.48</p>
+          <div class="card-decoration">
+            <div class="circle-line"></div>
+            <div class="circle-black"></div>
+          </div>
         </div>
-        <div class="card-body">
-          <h2 class="card-heading">Spending - Last 7 days</h2>
-          <div class="card-chart" data-chart>
+        <div class="card-body | bg-grey-100 p-400 br-300">
+          <h2 class="card-heading | fw-bold fs-500">Spending - Last 7 days</h2>
+          <div class="card-chart" data-chart style="display: none;">
             <div class="chart-column">
               <div class="chart-popup">$17.45</div>
               <div class="chart-bar" style="--height: 30%"></div>
@@ -88,10 +91,10 @@
           </div>
           <div class="card-divider"></div>
           <div class="card-total">
-            <h3 class="card-total-heading">Total this month</h3>
-            <p class="card-total" data-total>$478.33</p>
-            <p class="card-difference" data-difference>+2.4%</p>
-            <p>From last month</p>
+            <h3 class="card-total-heading | text-primary-400">Total this month</h3>
+            <p class="card-total | fw-bold fs-700" data-total>$478.33</p>
+            <p class="card-difference | fw-bold" data-difference>+2.4%</p>
+            <p class="text-primary-400">From last month</p>
           </div>
         </div>
       </div>
