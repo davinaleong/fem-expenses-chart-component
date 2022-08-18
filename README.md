@@ -4,7 +4,7 @@ Another simple challenge from Frontend Mentor.
 
 The challenge can be found [here](https://www.frontendmentor.io/challenges/expenses-chart-component-e7yJBUdjwt).
 
-Demo page cma be found [here](https://davinaleong.github.io/fem-expenses-chart-component/)!
+Demo page can be found [here](https://davinaleong.github.io/fem-expenses-chart-component/)!
 
 ## Getting Started
 
