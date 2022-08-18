@@ -128,15 +128,25 @@ main {
 
 /** Content - Card **/
 .card {
-  --width: 21.438em;
-  --height: 33.438em;
+  --card-width: 21.438em;
+  --card-height: 33.438em;
+  --card-padding: var(--size-600);
+  --card-spacer: var(--size-400);
 
-  width: var(--width);
-  min-height: var(--height);
+  width: var(--card-width);
+  min-height: var(--card-height);
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 6.063em 26.438em;
-  gap: var(--size-400);
+  gap: var(--card-spacer);
+}
+
+@media (min-width: 35.75em) {
+  .card {
+    --card-width: 33.75em;
+    --card-height: 41.25em;
+    grid-template-rows: 7.813em 32.063em;
+  }
 }
 
 .card-header {
@@ -145,6 +155,7 @@ main {
   grid-template-columns: 1fr auto;
   grid-template-rows: 0.5fr 1fr;
   height: 100%;
+  padding: var(--card-padding);
 }
 
 .card-header > .card-heading {
@@ -196,8 +207,9 @@ main {
   overflow: hidden;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(6, max-content);
+  grid-template-rows: max-content 20em repeat(4, max-content);
   align-items: center;
+  padding: var(--card-padding);
 }
 
 .card-body > .card-heading {
@@ -217,16 +229,17 @@ main {
   gap: var(--chart-spacer);
   justify-content: space-between;
   align-items: end;
+  height: 100%;
 }
 
 .chart-column {
-  width: var(--column-size);
+  width: calc((var(--card-width) - (var(--card-padding) * 2) - (var(--card-spacer) * 6)) / 7);
   display: flex;
   flex-direction: column;
   justify-content: end;
   gap: var(--size-200);
   padding-top: var(--size-700);
-  height: 15em;
+  height: 100%;
 }
 
 .chart-bar {
